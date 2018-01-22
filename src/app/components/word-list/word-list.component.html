@@ -5,15 +5,28 @@ http://localhost/cake3restapi/words.json
 <h2>List of words</h2>
 <ul class="list-group">
     <li class="list-group-item" *ngFor="let word of words.words">        
+        
         {{word.id}}
 
-        {{word.word}}
+        
+
+        <a [routerLink]="['/word/'+word.id]" class="btn btn-secondary">{{word.word}}</a>
+
 
         {{word.word_word_syllables}}
 
         {{word.created}}
 
         {{word.modified}}
+
+        
+
+        <a [routerLink]="['/edit-word/'+word.id]" class="btn btn-secondary">Edit</a>
+
+        <a [routerLink]="['/word/'+word.id]" class="btn btn-secondary">detail</a>
+        
     </li>
+
+    
 </ul>
 <p></p>

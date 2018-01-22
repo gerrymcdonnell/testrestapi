@@ -1,33 +1,58 @@
 import {Injectable} from '@angular/core';
-
 //import obserable
 import {Observable} from 'rxjs/Observable';
-
 //import map
 import 'rxjs/add/operator/map';
-
 import {Http} from '@angular/http';
+
+//import word
+import {Word} from '../models/word';
 
 @Injectable()
 export class DataService{
-    users:string[];
+    
+    word:Word;
 
-
-    //data: Observable<Array<number>>;
-
-    constructor(public http:Http){
-        //this.users=['ted','doungal','bob'];
+    constructor(public http:Http){       
 
     }
 
     //cross origin problem is cakephp problem but is fixed in this app
 
     /**
-     * returns words from rest service
+     * returns all words from rest service
      */
     getWords(){
         return this.http.get('http://localhost/cake3restapi/words.json').map(res=>res.json());
     }
+
+    /**
+     * 
+     * @param id get a single word
+     */
+    getWord(id:number){
+      /*this.word = this.af.object('/words/'+id) as FirebaseObjectObservable<Client>;
+      return this.word;*/
+      
+      //rest api below url may be wrong
+
+      return this.http.get('http://localhost/cake3restapi/words/view/'+id+'.json').map(res=>res.json());
+
+    }
+
+
+
+
+    /*updateWord(word){
+      return this.http.put('http://localhost/cake3restapi/words.json'+word.id, word)
+          .map(res => res.json());
+    }*/
+
+
+
+
+
+
 
 
     /*

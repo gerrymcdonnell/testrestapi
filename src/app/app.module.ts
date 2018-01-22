@@ -13,12 +13,16 @@ import {RouterModule,Routes} from '@angular/router'
 //import Dataservice
 import { DataService } from './services/data.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { EditWordComponent } from './components/edit-word/edit-word.component';
+import { WorddetailsComponent } from './components/worddetails/worddetails.component';
 
 //routes
 //create routes for app
 const appRoutes:Routes=[
-  {path:'',component:WordListComponent}/*, 
-  {path:'about',component:AboutComponent}*/
+  {path:'',component:WordListComponent}, 
+  {path:'wordlist',component:WordListComponent},
+  {path:'edit-word/:id',component:EditWordComponent},  
+  {path:'word/:id',component:WorddetailsComponent}
 ]
 
 
@@ -26,7 +30,9 @@ const appRoutes:Routes=[
   declarations: [
     AppComponent,
     WordListComponent,
-    NavbarComponent
+    NavbarComponent,
+    EditWordComponent,
+    WorddetailsComponent
   ],
   imports: [
     BrowserModule,
