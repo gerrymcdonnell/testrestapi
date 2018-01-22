@@ -18,20 +18,18 @@ export class WordListComponent implements OnInit {
 
 
     
-  //default constrctor
-    //Service must be added to component constructor
-    constructor(public dataService:DataService){       
-    
-      //use data service
-      this.dataService.getWords().subscribe(words=>{
-          this.words=words;
-      })
 
+    //Service must be added to component constructor
+    constructor(public dataService:DataService){
   }//end constructor
 
 
 
   ngOnInit() {
+    //use data service
+    this.dataService.getWords().subscribe(words=>{
+      this.words=words;
+    })
   }
 
 }

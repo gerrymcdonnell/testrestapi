@@ -36,7 +36,7 @@ export class DataService{
       
       //rest api below url may be wrong
 
-      return this.http.get('http://localhost/cake3restapi/words/view/'+id+'.json').map(res=>res.json());
+      return this.http.get('http://localhost/cake3restapi/words/'+id+'.json').map(res=>res.json());
 
     }
 
