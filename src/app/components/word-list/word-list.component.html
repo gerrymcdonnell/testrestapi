@@ -1,0 +1,19 @@
+Testing cakephp 3 restapi words.json
+
+http://localhost/cake3restapi/words.json
+
+<h2>List of words</h2>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let word of words.words">        
+        {{word.id}}
+
+        {{word.word}}
+
+        {{word.word_word_syllables}}
+
+        {{word.created}}
+
+        {{word.modified}}
+    </li>
+</ul>
+<p></p>
