@@ -14,7 +14,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class WorddetailsComponent implements OnInit {
 
   id:number;
-  wordObj:Word;
+  word:Word;
 
   constructor(
     public dataService:DataService,
@@ -32,7 +32,7 @@ export class WorddetailsComponent implements OnInit {
       console.log(w);
       console.log(w.wordtitle);
       
-      this.wordObj = w;  
+      this.word = w;  
           
       
     });
