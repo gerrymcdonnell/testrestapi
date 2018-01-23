@@ -13,7 +13,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class WorddetailsComponent implements OnInit {
 
-  id:number;
+  id:number=0;
 
   //gives errors in console
   //word:Word;
@@ -29,17 +29,14 @@ export class WorddetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
     // Get ID
     this.id = this.route.snapshot.params['id'];
     // Get Client
     this.dataService.getWord(this.id).subscribe(w => {
       
-      console.log(w);
-      console.log(w.wordtitle);
+      console.log(w.wordtitle);      
       
-      this.word = w;  
-          
+      this.word = w;     
       
     });
 

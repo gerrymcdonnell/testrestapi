@@ -12,9 +12,11 @@ import {Word} from '../models/word';
 export class DataService{
     
     word:Word;
+    words:Observable<any[]>;
 
     constructor(public http:Http){       
-
+        this.words=this.getWords();
+        console.log(this.words);
     }
 
     //cross origin problem is cakephp problem but is fixed in this app
@@ -41,17 +43,9 @@ export class DataService{
     }
 
 
-
-
-    /*updateWord(word){
-      return this.http.put('http://localhost/cake3restapi/words.json'+word.id, word)
-          .map(res => res.json());
-    }*/
-
-
-
-
-
+    updateWord(id:number, word:Word){
+        //return this.words.update(id, word);
+    }
 
 
 
