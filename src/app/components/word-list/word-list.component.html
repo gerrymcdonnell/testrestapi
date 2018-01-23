@@ -10,10 +10,11 @@ http://localhost/cake3restapi/words.json
 
         
 
-        <a [routerLink]="['/word/'+word.id]" class="btn btn-secondary">{{word.word}}</a>
+        <a [routerLink]="['/word/'+word.id]" class="btn btn-secondary">{{word.wordtitle}}</a>
 
+        {{word.wordtitle}}
 
-        {{word.word_word_syllables}}
+        {{word.word_syllables}}
 
         {{word.created}}
 

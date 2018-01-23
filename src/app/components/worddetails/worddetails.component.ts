@@ -14,7 +14,12 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class WorddetailsComponent implements OnInit {
 
   id:number;
-  word:Word;
+
+  //gives errors in console
+  //word:Word;
+  
+  //works
+  word:Word=new Object;
 
   constructor(
     public dataService:DataService,
@@ -24,6 +29,7 @@ export class WorddetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     // Get ID
     this.id = this.route.snapshot.params['id'];
     // Get Client
@@ -36,6 +42,9 @@ export class WorddetailsComponent implements OnInit {
           
       
     });
+
+
+
   }
 
 }
